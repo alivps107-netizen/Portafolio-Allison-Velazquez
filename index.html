@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allison Aide Velazquez Ponce | Portafolio Profesional</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0f0e17;
+            --surface-color: #1a1829;
+            --primary-color: #ff007f;
+            --secondary-color: #7928ca;
+            --accent-color: #00dfc4;
+            --text-color: #fffffe;
+            --text-muted: #a7a9be;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navegación */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 14, 23, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sección Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            background: radial-gradient(circle at 80% 20%, rgba(121, 40, 202, 0.15) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeInL 1s ease-out;
+        }
+
+        .hero-content h3 {
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-image img {
+            width: 380px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255, 0, 127, 0.3);
+            animation: fadeInR 1s ease-out;
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Sobre Mí */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Experiencia Videográfica */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: var(--surface-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .video-container {
+            width: 100%;
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 15px 15px 0 0;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .video-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Galerías Fotográficas */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 280px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(15,14,23,0.9), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--surface-color);
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Animaciones */
+        @keyframes fadeInL {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInR {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Responsive */
+        @media(max-width: 968px) {
+            .hero {
+                flex-direction: column-reverse;
+                justify-content: center;
+                text-align: center;
+                height: auto;
+                padding: 150px 8% 80px 8%;
+            }
+            .hero-image img {
+                width: 280px;
+                height: 350px;
+                margin-bottom: 30px;
+            }
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">ALLISON VELAZQUEZ</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#videos">Experiencia Videográfica</a></li>
+                <li><a href="#fotografia">Fotografía</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio / Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h3>ESTUDIANTE DE COMUNICACIÓN Y MEDIOS DIGITALES</h3>
+            <h1>ALLISON AIDE <span>VELAZQUEZ PONCE</span></h1>
+            <p style="color: var(--text-muted); margin-top: 10px;">Portafolio Profesional de Producción Audiovisual y Creación de Contenido.</p>
+        </div>
+        <div class="hero-image">
+            <!-- Imagen "yo.jpeg" al lado del nombre -->
+            <img src="yo.jpeg" alt="Allison Velazquez">
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi">
+        <h2 class="section-title">SOBRE MÍ</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>Soy estudiante de octavo semestre de la Licenciatura en Comunicación y Medios Digitales en la UVM. Me defino como una persona creativa, versátil, positiva y con gran facilidad de comunicación e improvisación.</p>
+                <p>Sé trabajar eficientemente bajo presión, estoy siempre dispuesta a aprender y destaco por mi desenvolvimiento frente a cámaras y en la creación de contenido audiovisual. Cuento con experiencia en producción de video, fotografía y comunicación institucional, así como en el área de ventas y asesoría.</p>
+                <p>Fuera del ámbito profesional, disfruto mucho viajar y bailar.</p>
+            </div>
+            <div class="about-image">
+                <!-- Imagen "16.jpeg" en sección Sobre Mí -->
+                <img src="16.jpeg" alt="Cobertura Fotográfica">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Experiencia Videográfica -->
+    <section id="videos">
+        <h2 class="section-title">EXPERIENCIA VIDEOGRÁFICA</h2>
+        <div class="video-grid">
+            
+            <!-- Video 1: Parque Ehecatl -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="PARQUE EHECATL cortinilla.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Parque Ehécatl - Granja Didáctica</h3>
+                    <p>Cápsula informativa y recorrido en las instalaciones del Parque Ecológico Ehécatl.</p>
+                </div>
+            </div>
+
+            <!-- Video 2: Comunidad Nido -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="VIDEO COMUNIDAD NIDO.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Comunidad NIDO</h3>
+                    <p>Reportaje y cobertura audiovisual de arte urbano y espacios comunitarios.</p>
+                </div>
+            </div>
+
+            <!-- Video 3: Sendero Seguro -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="Capsula sendero seguro.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Cápsula: Sendero Seguro</h3>
+                    <p>Conducción frente a cámara y presentación de proyectos urbanos e infraestructura.</p>
+                </div>
+            </div>
+
+            <!-- Video 4: Luminaria -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="luminaria terminado.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Luminaria Terminado</h3>
+                    <p>Producción, edición y conducción de cápsulas informativas institucionales.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección Galería Fotográfica -->
+    <section id="fotografia">
+        <h2 class="section-title">EXPERIENCIA FOTOGRÁFICA</h2>
+        
+        <!-- Fauna y Naturaleza (Igual) -->
+        <h3 style="margin-bottom: 25px; color: var(--accent-color);">Fauna y Naturaleza</h3>
+        <div class="gallery-grid" style="margin-bottom: 50px;">
+            <div class="gallery-item">
+                <img src="1.jpeg" alt="Fotografía 1">
+                <div class="gallery-overlay"><h4>Interacción Silvestre</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="2.jpeg" alt="Fotografía 2">
+                <div class="gallery-overlay"><h4>Observación de Fauna</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="5.jpeg" alt="Fotografía 5">
+                <div class="gallery-overlay"><h4>Aves y Entorno</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="7.jpeg" alt="Fotografía 7">
+                <div class="gallery-overlay"><h4>Reserva Natural</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="9.jpeg" alt="Fotografía 9">
+                <div class="gallery-overlay"><h4>Documental de Especies</h4></div>
+            </div>
+        </div>
+
+        <!-- Paisaje Urbano (Título cambiado) -->
+        <h3 style="margin-bottom: 25px; color: var(--accent-color);">Paisaje urbano</h3>
+        <div class="gallery-grid" style="margin-bottom: 50px;">
+            <div class="gallery-item">
+                <img src="8.jpeg" alt="Fotografía 8">
+                <div class="gallery-overlay"><h4>Arquitectura y Rascacielos</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="10.jpeg" alt="Fotografía 10">
+                <div class="gallery-overlay"><h4>Perspectivas de Ciudad</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="11.jpeg" alt="Fotografía 11">
+                <div class="gallery-overlay"><h4>Cultura Urbana</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="12.jpeg" alt="Fotografía 12">
+                <div class="gallery-overlay"><h4>Horizontes Urbanos</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="13.jpeg" alt="Fotografía 13">
+                <div class="gallery-overlay"><h4>Paisaje Metropolitano</h4></div>
+            </div>
+        </div>
+
+        <!-- Cobertura Institucional (Título cambiado) -->
+        <h3 style="margin-bottom: 25px; color: var(--accent-color);">Cobertura Institucional</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="3.jpeg" alt="Fotografía 3">
+                <div class="gallery-overlay"><h4>Operativos y Prácticas</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="4.jpeg" alt="Fotografía 4">
+                <div class="gallery-overlay"><h4>Unidades de Rescate</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="6.jpeg" alt="Fotografía 6">
+                <div class="gallery-overlay"><h4>Simulacros y Capacitación</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="14.jpeg" alt="Fotografía 14">
+                <div class="gallery-overlay"><h4>Seguridad Comunitaria</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="15.jpeg" alt="Fotografía 15">
+                <div class="gallery-overlay"><h4>Registro Institucional</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Allison Aide Velazquez Ponce. Todos los derechos reservados. | Licenciatura en Comunicación y Medios Digitales - UVM</p>
+    </footer>
+
+</body>
+</html>
